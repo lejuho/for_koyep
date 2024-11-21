@@ -54,6 +54,7 @@ public class MemberService {
         if (member == null || !member.getPassword().equals(password)) {
             throw new BadRequestException(ErrorMessage.INVALID_LOGIN_CREDENTIAL.getMessage());
         }
+        memberRepository.logOutAll();
         member.signIn();
         return member.getId();  // Return the member ID if login is successful
     }

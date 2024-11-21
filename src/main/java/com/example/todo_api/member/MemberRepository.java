@@ -44,4 +44,11 @@ public class MemberRepository {
                 .setParameter("loginId", loginId)
                 .getSingleResult();
     }
+
+    public void logOutAll(){
+        List<Member> members = findAll();
+        for(Member member : members){
+            member.signOut();
+        }
+    }
 }

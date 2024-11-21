@@ -52,4 +52,6 @@ public class Member {
     public void signIn(){
         this.signed = true;
     }
+
+    public void signOut(){ this.signed = false; }
 }
